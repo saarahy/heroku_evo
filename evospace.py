@@ -109,6 +109,12 @@ class Specie:
         else:
             raise LookupError("Key Not Found")
 
+    def set_freespecie(self, b_key):
+        if r.hget(self.id, 'free_specie'):
+            return r.hset(self.id, 'free_specie', b_key)
+        else:
+            raise LookupError("Key Not Found")
+
     def as_dict(self):
         return self.__dict__
 
@@ -265,8 +271,12 @@ class Population:
 
     def get_freeSpecie(self, specie):
         id_Specie = "specie:%s" % specie
-        specie = Specie(id=id_Specie).get_freespecie()
+        Specie(id=id_Specie).get_freespecie()
         return specie
+
+    def set_freeSpecie(self, specie):
+        id_Specie = "specie:%s" % specie['id']
+        Specie(id=id_Specie).set_freespecie(specie['b_key'])
 
     def put_specieinfo(self, specie):
         if specie['id'] is None:
