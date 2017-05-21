@@ -271,7 +271,7 @@ class Population:
 
     def get_freeSpecie(self, specie):
         id_Specie = "specie:%s" % specie
-        Specie(id=id_Specie).get_freespecie()
+        specie = Specie(id=id_Specie).get_freespecie()
         return specie
 
     def set_freeSpecie(self, specie):
