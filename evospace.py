@@ -81,6 +81,7 @@ class Specie:
         self.intra_distance = kwargs.get('intra_distance')
         self.flag_speciation = kwargs.get('flag_speciation')
         self.specie = kwargs.get('specie')
+        self.free_specie = kwargs.get('free_specie')
         self.__dict__.update(kwargs)
 
     def put(self, id):
@@ -136,7 +137,7 @@ class Population:
         r.hsetnx('at', self.individual_counter, 0)
         r.hsetnx('at', self.specie_counter, 0)
         r.hsetnx('at', self.returned_counter, 0)
-        r.hsetnx('at', self.free_pop, True)
+        r.hsetnx('at', self.free_pop, 0)
         r.hset('at', self.name + ":found", 0)
 
     def get_population(self):
