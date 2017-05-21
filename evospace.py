@@ -264,6 +264,8 @@ class Population:
         return r.hget('at', self.specie_counter)
 
     def get_freeSpecie(self, specie):
+        if specie['id'] is None:
+            specie['id'] = "specie:%s" % specie['specie']
         specie = Specie(**specie)
         return specie.get_freespecie(specie.id)
 
