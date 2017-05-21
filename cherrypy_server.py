@@ -26,10 +26,7 @@ class Content:
 
             if "params" in obj:
                 params = obj["params"]
-            # else:
-            #     return json.dumps({"result": None, "error":
-            #         {"code": -32604, "message": "Params empty"}, "id": _id})
-            #
+
             # # process the data
             cherrypy.response.headers['Content-Type'] = 'text/json-comment-filtered'
             result = None

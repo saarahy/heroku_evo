@@ -6,6 +6,7 @@ def init_species(population):
     for ind in population:
         ind.specie(1)
 
+
 #cuenta el numero de especies en total
 #de toda la poblacion
 def count_species(population):

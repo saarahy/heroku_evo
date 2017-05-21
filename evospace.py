@@ -9,9 +9,10 @@ AUTO_RESPAWN = True
 RESPAWN='REINSERT'
 #RESPAWN='RANDOM'
 
-HOST="redis-10326.c8.us-east-1-3.ec2.cloud.redislabs.com"
+
+HOST="redis-10270.c9.us-east-1-2.ec2.cloud.redislabs.com"
 # "pub-redis-13994.us-east-1-3.3.ec2.garantiadata.com"#"pub-redis-17694.us-east-1-3.4.ec2.garantiadata.com"
-PORT = 10326#13994#17694
+PORT = 10270#13994#17694
 PASS = "evo6"#"evopool6"
 
 # HOST= "localhost"

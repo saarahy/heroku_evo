@@ -3,3 +3,5 @@ jsonrpc
 redis
 simplejson
 deap
+scipy
+numpy
