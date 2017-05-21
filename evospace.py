@@ -150,7 +150,7 @@ class Population:
         r.hsetnx('at', self.individual_counter, 0)
         r.hsetnx('at', self.specie_counter, 0)
         r.hsetnx('at', self.returned_counter, 0)
-        r.hsetnx('at', self.free_pop, False)
+        r.hsetnx('at', self.free_pop, True)
         r.hset('at', self.name + ":found", 0)
 
     def get_population(self):
