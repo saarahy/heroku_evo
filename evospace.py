@@ -87,6 +87,7 @@ class Specie:
     def put(self, id):
         pipe = r.pipeline()
         pipe.hset(self.id, id, self.__dict__)
+        pipe.hset(self.id, 'free_specie', True)
         pipe.execute()
         return True
 
@@ -255,6 +256,9 @@ class Population:
 
     def get_at_specie(self):
         return r.hget('at', self.specie_counter)
+
+    #def get_freeSpecie(self, specie):
+        #return r.hget()
 
     def put_specieinfo(self, specie):
         if specie['id'] is None:
