@@ -150,7 +150,7 @@ class Population:
         r.hsetnx('at', self.individual_counter, 0)
         r.hsetnx('at', self.specie_counter, 0)
         r.hsetnx('at', self.returned_counter, 0)
-        r.hsetnx('at', self.free_pop, 0)
+        r.hsetnx('at', self.free_pop, False)
         r.hset('at', self.name + ":found", 0)
 
     def get_population(self):
@@ -268,6 +268,12 @@ class Population:
 
     def get_at_specie(self):
         return r.hget('at', self.specie_counter)
+
+    def get_freePop(self):
+        return r.hget('at', self.free_pop)
+
+    def set_freePop(self, b_key):
+        return r.hset('at', self.free_pop, b_key)
 
     def get_freeSpecie(self, specie):
         id_Specie = "specie:%s" % specie

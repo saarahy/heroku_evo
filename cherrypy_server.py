@@ -55,6 +55,10 @@ class Content:
                 result = self.population.get_freeSpecie(params[0])
             elif method == "getSpecieInfo":
                 result = self.population.get_specieinfo(params[0])
+            elif method == "getFreePopulation":
+                result = self.population.get_freePop()
+            elif method == "setFreePopulation":
+                result = self.population.set_freePop(params[0])
             elif method == "putIndividual":
                 result = self.population.put_individual(**params[0])
             elif method == "size":
