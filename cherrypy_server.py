@@ -51,6 +51,8 @@ class Content:
                 result = self.population.get_speciedistance(params[0])
             elif method == "setSpecieFree":
                 result = self.population.set_freeSpecie(params[0])
+            elif method == "getSpecieFree":
+                result = self.population.get_freeSpecie(params[0])
             elif method == "getSpecieInfo":
                 result = self.population.get_specieinfo(params[0])
             elif method == "putIndividual":
