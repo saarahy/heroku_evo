@@ -105,7 +105,7 @@ class Specie:
 
     def get_freespecie(self):
         if r.hget(self.id, 'free_specie'):
-            return eval(r.hget(self.id, 'free_specie'))
+            return r.hget(self.id, 'free_specie')
         else:
             raise LookupError("Key Not Found")
 
