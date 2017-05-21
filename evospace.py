@@ -113,6 +113,7 @@ class Population:
         self.specie_counter = self.name + ':specie_count'
         self.sample_queue = self.name+":sample_queue"
         self.returned_counter = self.name+":returned_count"
+        self.free_pop = self.name + ":free_pop"
         self.log_queue = self.name+":log_queue"
 
     def get_returned_counter(self):
@@ -135,6 +136,7 @@ class Population:
         r.hsetnx('at', self.individual_counter, 0)
         r.hsetnx('at', self.specie_counter, 0)
         r.hsetnx('at', self.returned_counter, 0)
+        r.hsetnx('at', self.free_pop, True)
         r.hset('at', self.name + ":found", 0)
 
     def get_population(self):
