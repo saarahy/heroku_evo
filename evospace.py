@@ -86,7 +86,7 @@ class Specie:
 
     def put(self, id):
         pipe = r.pipeline()
-        pipe.hset(self.id, type, self.__dict__)
+        pipe.hset(self.id, id, self.__dict__)
         pipe.hset(self.id, 'free_specie', True)
         pipe.execute()
         return True
