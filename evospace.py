@@ -84,9 +84,9 @@ class Specie:
         self.free_specie = kwargs.get('free_specie')
         self.__dict__.update(kwargs)
 
-    def put(self, id):
+    def put(self, type):
         pipe = r.pipeline()
-        pipe.hset(self.id, id, self.__dict__)
+        pipe.hset(self.id, type, self.__dict__)
         pipe.hset(self.id, 'free_specie', True)
         pipe.execute()
         return True
@@ -290,7 +290,7 @@ class Population:
         if not r.hexists(specie['id'], specie['id']):
             r.hincrby('at', self.specie_counter)
         specie = Specie(**specie)
-        specie.put(specie.id)
+        specie.put(specie['type'])
 
     def put_individual(self, **kwargs):
         if kwargs['id'] is None:
