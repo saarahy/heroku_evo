@@ -272,7 +272,7 @@ class Population:
     def get_freePop(self):
         return r.hget('at', self.free_pop)
 
-    def flus(self):
+    def flush(self):
         r.flushdb()
 
     def set_freePop(self, b_key):
