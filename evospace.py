@@ -150,11 +150,11 @@ class Population:
         if keys:
             r.delete(*keys)
         #r.flushall()
-        r.hsetnx('at', self.sample_counter, 0)
-        r.hsetnx('at', self.individual_counter, 0)
-        r.hsetnx('at', self.specie_counter, 0)
-        r.hsetnx('at', self.returned_counter, 0)
-        r.hsetnx('at', self.free_pop, True)
+        r.hset('at', self.sample_counter, 0)
+        r.hset('at', self.individual_counter, 0)
+        r.hset('at', self.specie_counter, 0)
+        r.hset('at', self.returned_counter, 0)
+        r.hset('at', self.free_pop, True)
         r.hset('at', self.name + ":found", 0)
 
     def get_population(self):
