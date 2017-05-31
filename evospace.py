@@ -91,6 +91,10 @@ class Specie:
         pipe.execute()
         return True
 
+    def del_(self, specie_):
+        r.delete(self.id)
+        r.delete(specie_)
+
     def get(self,  as_dict=False):
         if r.hget(self.id, self.id):
             _dict = eval(r.hget(self.id, self.id))
@@ -274,6 +278,10 @@ class Population:
 
     def flush(self):
         r.flushdb()
+
+    def delSpecie(self, specie):
+        id_Specie = "specie:%s" % specie
+        Specie(id=id_Specie).del_(specie)
 
     def set_freePop(self, b_key):
         return r.hset('at', self.free_pop, b_key)
