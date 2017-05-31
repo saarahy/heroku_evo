@@ -57,6 +57,8 @@ class Content:
                 result = self.population.get_specieinfo(params[0])
             elif method == "getFreePopulation":
                 result = self.population.get_freePop()
+            elif method == "flushPopulation":
+                result  = self.population.flush()
             elif method == "setFreePopulation":
                 result = self.population.set_freePop(params[0])
             elif method == "putIndividual":
