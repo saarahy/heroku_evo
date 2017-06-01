@@ -154,7 +154,6 @@ class Population:
         r.hset('at', self.individual_counter, 0)
         r.hset('at', self.specie_counter, 0)
         r.hset('at', self.returned_counter, 0)
-        r.hset('at', self.free_pop, True)
         r.hset('at', self.name + ":found", 0)
 
     def get_population(self):
