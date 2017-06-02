@@ -132,6 +132,7 @@ class Population:
         self.sample_queue = self.name+":sample_queue"
         self.returned_counter = self.name+":returned_count"
         self.free_pop = self.name + ":free_pop"
+        self.free_file = self.name + ":free_file"
         self.log_queue = self.name+":log_queue"
 
     def get_returned_counter(self):
