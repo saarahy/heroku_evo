@@ -155,6 +155,7 @@ class Population:
         r.hset('at', self.specie_counter, 0)
         r.hset('at', self.returned_counter, 0)
         r.hset('at', self.free_pop, False)
+        r.hset('at', self.free_file, True)
         r.hset('at', self.name + ":found", 0)
 
     def get_population(self):
@@ -276,6 +277,9 @@ class Population:
     def get_freePop(self):
         return r.hget('at', self.free_pop)
 
+    def get_freeFile(self):
+        return r.hget('at', self.free_file)
+
     def flush(self):
         r.flushdb()
 
@@ -285,6 +289,9 @@ class Population:
 
     def set_freePop(self, b_key):
         return r.hset('at', self.free_pop, b_key)
+
+    def set_freeFile(self, b_key):
+        return r.hset('at', self.free_file, b_key)
 
     def get_freeSpecie(self, specie):
         id_Specie = "specie:%s" % specie
