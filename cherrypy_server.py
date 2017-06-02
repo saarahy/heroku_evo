@@ -55,7 +55,7 @@ class Content:
                 result = self.population.get_freeSpecie(params[0])
             elif method == "getSpecieInfo":
                 result = self.population.get_specieinfo(params[0])
-            elif method == "getFreePopulation": #get_freeFile
+            elif method == "getFreePopulation":
                 result = self.population.get_freePop()
             elif method == "getFreeFile":
                 result = self.population.get_freeFile()
