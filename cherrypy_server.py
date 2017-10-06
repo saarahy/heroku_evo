@@ -57,12 +57,16 @@ class Content:
                 result = self.population.get_specieinfo(params[0])
             elif method == "getFreePopulation":
                 result = self.population.get_freePop()
+            elif method == "getFreeFile":
+                result = self.population.get_freeFile()
             elif method == "flushPopulation":
                 result  = self.population.flush()
             elif method == "delSpecie":
                 result = self.population.delSpecie(params[0])
             elif method == "setFreePopulation":
                 result = self.population.set_freePop(params[0])
+            elif method == "setFreeFile":
+                result = self.population.set_freeFile(params[0])
             elif method == "putIndividual":
                 result = self.population.put_individual(**params[0])
             elif method == "size":
