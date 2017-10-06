@@ -10,9 +10,9 @@ RESPAWN='REINSERT'
 #RESPAWN='RANDOM'
 
 
-HOST="redis-10270.c9.us-east-1-2.ec2.cloud.redislabs.com"
+HOST="redis-17476.c14.us-east-1-2.ec2.cloud.redislabs.com"
 # "pub-redis-13994.us-east-1-3.3.ec2.garantiadata.com"#"pub-redis-17694.us-east-1-3.4.ec2.garantiadata.com"
-PORT = 10270#13994#17694
+PORT = 17476#13994#17694
 PASS = "evo6"#"evopool6"
 
 # HOST= "localhost"
@@ -285,6 +285,7 @@ class Population:
 
     def set_freePop(self, b_key):
         return r.hset('at', self.free_pop, b_key)
+
 
     def get_freeSpecie(self, specie):
         id_Specie = "specie:%s" % specie
